@@ -8,7 +8,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -33,7 +32,7 @@ function App() {
       document.body.style.backgroundColor = '#353535'
       document.body.style.color = 'white'
       showAlert("Dark Mode has been enabled", "success")
-      document.title = 'TextUtils - Dark Mode'
+      // document.title = 'TextUtils - Dark Mode'
     }
 
     else {
@@ -41,7 +40,7 @@ function App() {
       document.body.style.backgroundColor = 'white'
       document.body.style.color = 'black'
       showAlert("Light Mode has been enabled", "success")
-      document.title = 'TextUtils - Light Mode'
+      // document.title = 'TextUtils - Light Mode'
     }
   }
 
@@ -52,8 +51,9 @@ function App() {
         <Alert alert={alert} />
         <div className='container my-3'>
           <Routes>
-            <Route path="/about" element={<About />} />
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+            <Route path="/about" element={<About mode={mode} />} />
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, 
+            Remove Extra Spaces" mode={mode} />} />
           </Routes>
         </div>
       </Router >

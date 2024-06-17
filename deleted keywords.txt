@@ -1,0 +1,4 @@
+"homepage": "https://Prince.github.io/TextUtils_react",
+
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
